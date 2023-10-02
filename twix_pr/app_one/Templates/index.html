@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confectionery Products</title>
+</head>
+<body>
+    <h1>Factory One Products</h1>
+    <ul>
+        {% for product in factory_one_products %}
+            <li><a href="{% url 'app_one:product_detail' product.id %}">{{ product.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h1>Factory Two Products</h1>
+    <ul>
+        {% for product in factory_two_products %}
+            <li><a href="{% url 'app_two:product_detail' product.id %}">{{ product.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
